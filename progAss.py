@@ -84,7 +84,7 @@ def getMaxSkew(genomeString, n):
 		return maxSkew
 
 	else:
-		skewness = "Error! q should be greater than or equal to n"
+		skewness = "Error! q >= n"
 	return skewness
 
 maxSkew = getMaxSkew(genomeString, n)

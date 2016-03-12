@@ -4,6 +4,8 @@ thisString = "AATATATAGG"
 subString = "ATA"
 validateString = "ACGT"
 strAlphabet = "ACGT"
+genomeString = "GGCCAC"
+n = 2
 
 def getHammingDistance(string1, string2):
 	hammingDistance = 0
@@ -45,3 +47,21 @@ def isValidString(validateString, strAlphabet):
 
 isValid = isValidString(validateString, strAlphabet)
 print("String valid? " + str(isValid))
+
+def getSkew(genomeString, n):
+	countG = 0
+	countC = 0
+	if len(genomeString) >= n:
+		for i in range(n):
+			if genomeString[i] == "G":
+				countG += 1
+			elif genomeString[i] == "C":
+				countC += 1
+		skewness = countG - countC
+
+	else:
+		skewness = "Error! q should be greater than or equal to n"
+	return skewness
+
+skewness = getSkew(genomeString, n)
+print("Skewness = " + str(skewness))

@@ -89,3 +89,27 @@ def getMaxSkew(genomeString, n):
 
 maxSkew = getMaxSkew(genomeString, n)
 print("Max Skewness = " + str(maxSkew))
+
+def getMinSkew(genomeString, n):
+	countG = 0
+	countC = 0
+	minSkew = len(genomeString)
+	if len(genomeString) >= n:
+		for i in range(n):
+			if genomeString[i] == "G":
+				countG += 1
+			elif genomeString[i] == "C":
+				countC += 1
+			skewness = countG - countC
+
+			if skewness < minSkew:
+				minSkew = skewness
+				
+		return minSkew
+
+	else:
+		skewness = "Error! q should be greater than or equal to n"
+	return skewness
+
+minSkew = getMinSkew(genomeString, n)
+print("Min Skewness = " + str(minSkew))
